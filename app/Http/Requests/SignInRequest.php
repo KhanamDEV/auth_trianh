@@ -22,8 +22,8 @@ class SignInRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'min:6',
+            'password_confirmation' => 'required_with:password|same:password|min:6'
         ];
     }
 }
